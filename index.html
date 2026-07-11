@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Murtazim Academy | Excellence in Education</title>
+  <meta name="description"
+    content="Murtazim Academy — A premier educational institution in Mogadishu, Somalia, nurturing excellence through Primary, Secondary, Islamic Studies & Technology programs." />
+  <link rel="icon" type="image/png" href="Images/Murtazim Logo .png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon-wrap">
+          <img src="Images/Murtazim Logo .png" alt="Murtazim Academy Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Murtazim <strong>Academy</strong></span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#teachers">Teachers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="#contact" class="btn-apply">Get In Touch</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">🎓 Enrolment Open — Academic Year 2025–26</div>
+      <h1 class="hero-title reveal">
+        Shaping Tomorrow's<br>
+        <span>Leaders Today</span>
+      </h1>
+      <p class="hero-desc reveal">
+        Murtazim Academy provides world-class education rooted in Islamic values, academic excellence, and modern
+        innovation — right here in Mogadishu, Somalia.
+      </p>
+      <div class="hero-btns reveal">
+        <a href="#courses" class="btn-primary">Explore Courses →</a>
+        <a href="#about" class="btn-ghost">About the Academy</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div class="sec-label">About Murtazim Academy</div>
+        <h2 class="sec-title">Built on <span>Values, Vision &amp; Excellence</span></h2>
+        <div class="title-bar center"></div>
+        <p class="sec-desc">Founded in 2009, nurturing excellence, integrity, and Islamic values in every student.</p>
+      </div>
+      <div class="principal-block">
+        <div class="principal-img-wrap reveal-left">
+          <img src="Images/principal.png" alt="School Principal Dr. Yusuf Al-Amin" class="principal-img" />
+        </div>
+        <div class="principal-message reveal-right">
+          <div class="quote-mark">&ldquo;</div>
+          <h3 class="principal-heading">A Warm Welcome from Our Principal</h3>
+          <p class="principal-text">
+            Bismillah Al-Rahman Al-Raheem. Welcome to Murtazim Academy. We believe every child carries immense potential
+            waiting to be discovered. Our mission is to nurture this potential by blending rigorous academics with
+            deep Islamic values and strong character.
+          </p>
+          <p class="principal-text">
+            Together with our dedicated team of educators, we are committed to preparing our students to become the
+            next generation of leaders for Somalia and beyond. We invite you to join our thriving community.
+          </p>
+          <div class="principal-sig">
+            <div class="sig-line"></div>
+            <div>
+              <strong>Mr. Xasan Kaafi </strong>
+              <span>School Principal & English Teacher </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-pillars-row">
+        <div class="pillar-card reveal">
+          <div class="pillar-icon" style="background:rgba(5,154,71,0.1);color:#059A47;">🎯</div>
+          <strong>Our Mission</strong>
+          <p>To nurture every student's potential through a holistic, values-driven education.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon" style="background:rgba(17,120,184,0.1);color:#1178B8;">🔭</div>
+          <strong>Our Vision</strong>
+          <p>To be the leading academy producing future leaders for Somalia and beyond.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon" style="background:rgba(240,160,30,0.1);color:#F0A01E;">🤝</div>
+          <strong>Our Values</strong>
+          <p>Excellence, Integrity, Innovation, Community, and Islamic Ethics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ═══ COURSES ═══ -->
+  <section class="courses section" id="courses">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div class="sec-label">Academic Programs</div>
+        <h2 class="sec-title">Our <span>Courses &amp; Programs</span></h2>
+        <div class="title-bar center"></div>
+        <p class="sec-desc">Explore our comprehensive curriculum designed to unlock every student's full potential.</p>
+      </div>
+      <div class="course-filters reveal">
+        <button class="f-btn active" data-filter="all">All</button>
+        <button class="f-btn" data-filter="primary">Primary Education</button>
+        <button class="f-btn" data-filter="secondary">Secondary School</button>
+        <button class="f-btn" data-filter="islamic">Islamic Studies</button>
+        <button class="f-btn" data-filter="tech">Technology</button>
+      </div>
+      <div class="courses-grid" id="coursesGrid">
+        <div class="course-card reveal" data-cat="primary">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-primary">📐</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-primary">Primary Education</div>
+            <h3>Primary Mathematics</h3>
+            <p>A strong numeracy foundation with problem-solving, logic, and applied mathematics for young learners in
+              Grades 1– 8</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="primary">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-language">📖</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-primary">Primary Education</div>
+            <h3>Language Arts</h3>
+            <p>Reading, writing, Somali and English language skills developed for confident, fluent
+              communication</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="secondary">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-science">🔬</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-secondary">Secondary School</div>
+            <h3>Biology &amp; Chemistry</h3>
+            <p>Advanced study of life sciences, molecular biology, and chemical reactions preparing students for
+              medicine and STEM pathways.</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="secondary">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-bio">🧬</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-secondary">Secondary School</div>
+            <h3>Physics and Math</h3>
+            <p>Rigorous training in mechanics, physical laws, calculus, and mathematical analysis for engineering
+              careers.</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="islamic">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-islamic">🕌</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-islamic">Islamic Studies</div>
+            <h3>Fiqh &amp; Islamic Ethics</h3>
+            <p>Practical Islamic jurisprudence and moral values to guide students in everyday life with confidence.</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="islamic">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-fiqh">📜</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-islamic">Islamic Studies</div>
+            <h3>Hadith and Aqeedah Studies</h3>
+            <p>In-depth study of Prophetic traditions (Hadith) and the core tenets of Islamic belief (Aqeedah).</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="tech">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-tech">💻</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-tech">Technology</div>
+            <h3>Basic Computer Skills</h3>
+            <p>Essential digital literacy, office applications, and computer operating fundamentals for the modern
+              world.</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-cat="tech">
+          <div class="course-img-wrap">
+            <div class="course-img-placeholder ci-business">⚙️</div>
+          </div>
+          <div class="course-body">
+            <div class="course-tag tag-tech">Technology</div>
+            <h3>Web Development</h3>
+            <p>Build modern, responsive websites using HTML, CSS, JavaScript, and basic programming concepts.</p>
+            <a href="#contact" class="course-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEACHERS ═══ -->
+  <section class="teachers section" id="teachers">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div class="sec-label">Our Team</div>
+        <h2 class="sec-title">Meet Our <span>Expert Teachers</span></h2>
+        <div class="title-bar center"></div>
+        <p class="sec-desc">Dedicated, certified, and passionate educators committed to every student's success.</p>
+      </div>
+      <div class="teachers-grid">
+        <div class="teacher-card reveal">
+          <div class="teacher-img">
+            <img src="Images/teacher_ahmed.png" alt=" Prof. Mahamuud ( Muudhi )"
+              onerror="this.style.display='none';this.parentElement.querySelector('.teacher-placeholder').style.display='flex'" />
+            <div class="teacher-placeholder" style="display:none">👨‍🏫</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Prof. Mahamuud ( Muudhi )</h3>
+            <span> Mathematics & Technology </span>
+            <p> Mathematics & BSc Computer Science . 5 Years Experience <br> </p>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-img">
+            <img src="Images/teacher_fatima.png" alt="Ms. Fatima Ali"
+              onerror="this.style.display='none';this.parentElement.querySelector('.teacher-placeholder').style.display='flex'" />
+            <div class="teacher-placeholder" style="display:none">👩‍🏫</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Mr. Capdalla Leo </h3>
+            <span> Somali Language</span>
+            <p> Linguistics · 5 Years</p>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-img">
+            <img src="Images/teacher_omar.png" alt="Sheikh Omar Farah"
+              onerror="this.style.display='none';this.parentElement.querySelector('.teacher-placeholder').style.display='flex'" />
+            <div class="teacher-placeholder" style="display:none">👨‍🏫</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Sheikh Omar Farah</h3>
+            <span>Islamic Studies </span>
+            <p>Diploma in Islamic Studies · 5 Years Experience</p>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-img">
+            <img src="Images/teacher_hodan.png" alt="Ms. Hodan Warsame"
+              onerror="this.style.display='none';this.parentElement.querySelector('.teacher-placeholder').style.display='flex'" />
+            <div class="teacher-placeholder" style="display:none">👩‍🏫</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Ms. Hodan Warsame</h3>
+            <span>Computer Science &amp; ICT</span>
+            <p>· 7 Years Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div class="sec-label">Get In Touch</div>
+        <h2 class="sec-title">Contact <span>Murtazim Academy</span></h2>
+        <div class="title-bar center"></div>
+        <p class="sec-desc">We'd love to hear from you. Reach out about admissions, academics, or any questions.</p>
+      </div>
+      <div class="contact-gr id">
+        <div class="contact-info reveal-left">
+          <div class="ci-card">
+            <div class="ci-icon">📍</div>
+            <div><strong>Address</strong>
+              <p>Kaxda District, Banadir, Mogadishu, Somalia</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">📞</div>
+            <div><strong>Phone</strong>
+              <p>+252 61 8493782</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">✉️</div>
+            <div><strong>Email</strong>
+              <p>admissions@murtazim.edu.so</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">🕐</div>
+            <div><strong>Office Hours</strong>
+              <p>Sunday – Thursday: 7:00 AM – 4:00 PM</p>
+            </div>
+          </div>
+          <!-- Google Maps embed -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15869.71235640461!2d45.28!3d2.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3d588251d3cbf70f%3A0x8d6e9b5f4a7e2c4a!2sKaxda%2C+Mogadishu%2C+Somalia!5e0!3m2!1sen!2s!4v1623400000000!5m2!1sen!2s"
+              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Murtazim Academy Location">
+            </iframe>
+          </div>
+          <div class="social-row">
+            <a href="#" class="soc-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="soc-btn" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              </svg>
+            </a>
+            <a href="#" class="soc-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-row">
+            <div class="fg"><label for="fname">Full Name</label><input id="fname" type="text"
+                placeholder="Your full name" required /></div>
+            <div class="fg"><label for="femail">Email</label><input id="femail" type="email"
+                placeholder="your@email.com" required /></div>
+          </div>
+          <div class="fg"><label for="fphone">Phone Number</label><input id="fphone" type="tel"
+              placeholder="+252 61 xxxxxxx" /></div>
+          <div class="fg">
+            <label for="fsubject">Subject</label>
+            <select id="fsubject">
+              <option>Admissions Inquiry</option>
+              <option>Academic Information</option>
+              <option>Fees &amp; Scholarships</option>
+              <option>General Question</option>
+            </select>
+          </div>
+          <div class="fg"><label for="fmessage">Message</label><textarea id="fmessage" rows="5"
+              placeholder="Write your message here..." required></textarea></div>
+          <button type="submit" class="btn-primary full">Send Message</button>
+          <div class="form-success" id="formSuccess">✅ Message sent! We'll respond within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="cta-banner">
+    <div class="cta-content reveal">
+      <h2>Ready to Join Murtazim Academy?</h2>
+      <p>Give your child the education they deserve. Enrolment is now open for 2025–26.</p>
+      <a href="#contact" class="btn-cta-white">Contact Us Today →</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo">
+            <div class="logo-icon-wrap">
+              <img src="Images/Murtazim Logo .png" alt="Murtazim Academy Logo" class="logo-img" />
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">Murtazim <strong>Academy</strong></span>
+            </div>
+          </a>
+          <p>Nurturing excellence, integrity, and innovation in every student through holistic education since 2009.
+            Located in Kaxda, Mogadishu.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#courses">Courses</a>
+          <a href="#teachers">Teachers</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Academic Programs</h4>
+          <a href="#courses">Primary Education</a>
+          <a href="#courses">Secondary School</a>
+          <a href="#courses">Islamic Studies</a>
+          <a href="#courses">Technology</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">Kaxda, Banadir, Mogadishu</a>
+          <a href="tel:+252618493782">+252 61 8493782</a>
+          <a href="mailto:admissions@murtazim.edu.so">admissions@murtazim.edu.so</a>
+          <a href="#">Sun–Thu: 7AM – 4PM</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Murtazim Academy · Kaxda, Mogadishu, Somalia. All rights reserved.</p>
+        <div><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
