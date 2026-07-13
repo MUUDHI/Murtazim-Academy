@@ -1,0 +1,12 @@
+# robots.txt for Murtazim Academy
+# https://muudhi.github.io/Murtazim-Academy/
+
+# Allow all web crawlers full access
+User-agent: *
+Allow: /
+
+# Block access to GitHub Pages internal paths (if any)
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://muudhi.github.io/Murtazim-Academy/sitemap.xml
