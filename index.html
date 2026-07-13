@@ -367,28 +367,35 @@
             </a>
           </div>
         </div>
-        <form class="contact-form reveal-right" id="contactForm">
+        <form class="contact-form reveal-right" id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST">
+          <!-- Web3Forms access key -->
+          <input type="hidden" name="access_key" value="eb21ae73-6c59-4dac-a827-fb2e490d0039" />
+          <!-- Redirect back to same page after submission (optional) -->
+          <input type="hidden" name="redirect" value="false" />
           <div class="form-row">
-            <div class="fg"><label for="fname">Full Name</label><input id="fname" type="text"
+            <div class="fg"><label for="fname">Full Name</label><input id="fname" name="name" type="text"
                 placeholder="Your full name" required /></div>
-            <div class="fg"><label for="femail">Email</label><input id="femail" type="email"
+            <div class="fg"><label for="femail">Email</label><input id="femail" name="email" type="email"
                 placeholder="your@email.com" required /></div>
           </div>
-          <div class="fg"><label for="fphone">Phone Number</label><input id="fphone" type="tel"
+          <div class="fg"><label for="fphone">Phone Number</label><input id="fphone" name="phone" type="tel"
               placeholder="+252 61 xxxxxxx" /></div>
           <div class="fg">
             <label for="fsubject">Subject</label>
-            <select id="fsubject">
+            <select id="fsubject" name="subject">
               <option>Admissions Inquiry</option>
               <option>Academic Information</option>
               <option>Fees &amp; Scholarships</option>
               <option>General Question</option>
             </select>
           </div>
-          <div class="fg"><label for="fmessage">Message</label><textarea id="fmessage" rows="5"
+          <div class="fg"><label for="fmessage">Message</label><textarea id="fmessage" name="message" rows="5"
               placeholder="Write your message here..." required></textarea></div>
           <button type="submit" class="btn-primary full">Send Message</button>
           <div class="form-success" id="formSuccess">✅ Message sent! We'll respond within 24 hours.</div>
+          <div class="form-error" id="formError">❌ Something went wrong. Please try again.</div>
         </form>
       </div>
     </div>

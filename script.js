@@ -166,22 +166,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ─── 8. CONTACT FORM ─── */
-  const form = document.getElementById('contactForm');
+  /* ─── 8. CONTACT FORM (Web3Forms) ─── */
+  const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+  const errorEl = document.getElementById('formError');
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('.btn-primary');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    setTimeout(() => {
-      success.classList.add('show');
-      form.reset();
+    success.classList.remove('show');
+    errorEl.classList.remove('show');
+
+    try {
+      const data = new FormData(form);
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method : 'POST',
+        body   : data
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        success.classList.add('show');
+        form.reset();
+        setTimeout(() => success.classList.remove('show'), 6000);
+      } else {
+        errorEl.classList.add('show');
+        setTimeout(() => errorEl.classList.remove('show'), 6000);
+      }
+    } catch (err) {
+      errorEl.classList.add('show');
+      setTimeout(() => errorEl.classList.remove('show'), 6000);
+    } finally {
       btn.textContent = 'Send Message';
       btn.disabled = false;
-      setTimeout(() => success.classList.remove('show'), 6000);
-    }, 1300);
+    }
   });
 
   /* ─── 9. SMOOTH SCROLL ─── */
