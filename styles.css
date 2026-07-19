@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   MURTAZIM ACADEMY — Premium CSS
+   MURTAZIM ACADEMY | Premium CSS
    Green #059A47 · Blue #1178B8 · Orange #F0A01E
    ═══════════════════════════════════ */
 
@@ -1310,6 +1310,10 @@ img {
 }
 
 @media(max-width:720px) {
+  .nav-inner {
+    padding: 0 1.25rem;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -1327,8 +1331,15 @@ img {
     display: flex;
   }
 
-  .nav-links a {
-    color: var(--text-muted);
+  .nav-links a,
+  .navbar:not(.scrolled) .nav-links a {
+    color: var(--text);
+    font-size: 16px;
+  }
+
+  .nav-links a:hover,
+  .navbar:not(.scrolled) .nav-links a:hover {
+    color: var(--green);
   }
 
   .hamburger {
@@ -1363,7 +1374,7 @@ img {
 
 @media(max-width:520px) {
   .section {
-    padding: 72px 0;
+    padding: 60px 0;
   }
 
   .courses-grid,
@@ -1373,6 +1384,11 @@ img {
   }
 
   .hero-title {
-    font-size: 40px;
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    padding: 0 10px;
   }
 }

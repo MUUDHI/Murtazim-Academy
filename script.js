@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   MURTAZIM ACADEMY — script.js
+   MURTAZIM ACADEMY | script.js
    ═══════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─── 8. CONTACT FORM (Web3Forms) ─── */
-  const form    = document.getElementById('contactForm');
+  const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   const errorEl = document.getElementById('formError');
 
@@ -181,9 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const data = new FormData(form);
-      const res  = await fetch('https://api.web3forms.com/submit', {
-        method : 'POST',
-        body   : data
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
       });
       const json = await res.json();
 
@@ -207,11 +207,21 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── 9. SMOOTH SCROLL ─── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
+      const href = a.getAttribute('href');
+      const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       const top = target.getBoundingClientRect().top + window.pageYOffset - navbar.offsetHeight;
       window.scrollTo({ top, behavior: 'smooth' });
+
+      if (href === '#contact') {
+        const fname = document.getElementById('fname');
+        if (fname) {
+          setTimeout(() => {
+            fname.focus({ preventScroll: true });
+          }, 600);
+        }
+      }
     });
   });
 
