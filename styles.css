@@ -885,7 +885,7 @@ img {
 .teachers-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .teacher-card {
@@ -894,26 +894,42 @@ img {
   border: 1px solid var(--border);
   background: var(--bg-card);
   transition: transform var(--trans), box-shadow var(--trans);
+  display: flex;
+  flex-direction: column;
 }
 
 .teacher-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
+/* Portrait-ratio container — always consistent across breakpoints */
 .teacher-img {
   position: relative;
-  height: 290px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--bg3);
+  flex-shrink: 0;
 }
 
 .teacher-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
-  transition: transform 0.5s ease;
+  object-position: center top;
+  transition: transform 0.55s ease;
+  display: block;
+}
+
+/* Classroom / wide shot — keep subject centred rather than pulling to top edge */
+.teacher-img.wide-shot img {
+  object-position: center 20%;
+}
+
+/* Side-profile shot — nudge toward center so face stays visible */
+.teacher-img.side-profile img {
+  object-position: 40% top;
 }
 
 .teacher-card:hover .teacher-img img {
@@ -930,19 +946,38 @@ img {
   background: var(--bg3);
 }
 
-
+/* Gradient overlay that fades bottom of image into card bg for a premium look */
+.teacher-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  pointer-events: none;
+}
 
 .teacher-info {
-  padding: 16px;
+  padding: 18px 16px 16px;
   border-top: 3px solid var(--green);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .teacher-info h3 {
   font-family: var(--font-head);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 .teacher-info span {
@@ -952,13 +987,14 @@ img {
   color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .teacher-info p {
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.6;
+  margin-top: auto;
 }
 
 .teacher-bio {
@@ -1292,6 +1328,15 @@ img {
 
   .teachers-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablet portrait – 3-column teachers looks better than 4 */
+@media(max-width:900px) {
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 }
 
@@ -1379,9 +1424,22 @@ img {
   }
 
   .courses-grid,
-  .teachers-grid,
   .about-pillars-row {
     grid-template-columns: 1fr;
+  }
+
+  /* On small phones show 2 teacher cards side by side — image is tall enough */
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .teacher-info h3 {
+    font-size: 14px;
+  }
+
+  .teacher-info span {
+    font-size: 10px;
   }
 
   .hero-title {
@@ -1391,5 +1449,13 @@ img {
   .hero-desc {
     font-size: 15px;
     padding: 0 10px;
+  }
+}
+
+/* Very small phones – stack to single column */
+@media(max-width:380px) {
+  .teachers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
