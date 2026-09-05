@@ -260,25 +260,27 @@ img {
 }
 
 .logo-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform var(--trans);
+  flex-shrink: 0;
 }
 
 .logo:hover .logo-icon-wrap {
-  transform: rotate(5deg) scale(1.05);
+  transform: rotate(6deg) scale(1.08);
 }
 
 .logo-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  border-radius: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
 }
 
 .logo-text {
@@ -1234,7 +1236,7 @@ img {
 }
 
 .footer-logo .logo-img {
-  filter: brightness(1.2);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35)) brightness(1.05);
 }
 
 .footer-brand p {
